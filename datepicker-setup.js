@@ -1,3 +1,5 @@
-var multi = new Datepicker('#multi', {
-    multiple: true
+var ranged = new Datepicker('#ranged', {
+    weekStart: 1,
+    inline: true,
+    ranged: true
   });
