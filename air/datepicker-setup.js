@@ -6,9 +6,23 @@ let button = {
   },
 };
 
-function select(date) {
-  console.log(date.getDate);
+const dateList = [
+  "03/01/2023",
+  "03/02/2023",
+  "03/03/2023",
+  "03/04/2023",
+  "03/05/2023",
+];
+
+function newDateList(dateList) {
+  var newList = [];
+  for (let index = 0; index < dateList.length; index++) {
+    newList.push(Date.parse(dateList[index]));
+  }
+  return newList;
 }
+
+newDateList = newDateList(dateList);
 
 datepicker = new AirDatepicker("#datepicker", {
   inline: true,
@@ -16,9 +30,9 @@ datepicker = new AirDatepicker("#datepicker", {
   range: true,
   dynamicRange: true,
   buttons: [button],
-  onRenderCell: ({ date, cellType }) => {
+  onRenderCell({ date, cellType }) {
     if (cellType === "day") {
-      if (date.getDate() === 10) {
+      if (newDateList.includes(Date.parse(date))) {
         return {
           disabled: true,
           classes: "disabled-class",
