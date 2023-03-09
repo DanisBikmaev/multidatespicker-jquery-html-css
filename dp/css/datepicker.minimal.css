@@ -147,7 +147,7 @@
   font-weight: bold;
 }
 
-.datepicker__day.is-disabled,
+.datepicker__day.is-disabled 
 .datepicker__day.is-otherMonth {
   cursor: default;
   pointer-events: none;

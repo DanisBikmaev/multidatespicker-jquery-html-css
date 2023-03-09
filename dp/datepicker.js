@@ -989,6 +989,7 @@
                     t
                   );
                 },
+                renderSubmit: function () {},
               })),
                 r && r(this.wrapper.firstChild);
             }
